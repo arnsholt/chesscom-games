@@ -15,6 +15,8 @@ def download_archive(url, where):
     m = d.month
     filename = os.path.join(where, "%d-%02d.pgn" % (y, m))
     print('Starting work on %s...' % filename)
+    # XXX: If a file with this name already exists, we'll blow away the old
+    # one. Possibly not ideal.
     with open(filename, 'w', encoding='utf-8') as output:
         for game in games:
             print(game['pgn'], file=output)
