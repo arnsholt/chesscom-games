@@ -5,7 +5,7 @@ import requests
 
 def main(user, where):
     print("Downloading %s's games to %s:" % (user, where))
-    for archive in get('http://api.chess.com/pub/player/%s/games/archives' % user)['archives']:
+    for archive in get('https://api.chess.com/pub/player/%s/games/archives' % user)['archives']:
         download_archive(archive, where)
 
 def download_archive(url, where):
